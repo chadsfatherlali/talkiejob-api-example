@@ -8,30 +8,30 @@
     ]
   },
   "User": {
-    "dataSource": "db",
+    "dataSource": "mongo-db",
     "public": false
   },
   "AccessToken": {
-    "dataSource": "db",
+    "dataSource": "mongo-db",
     "public": false
   },
   "ACL": {
-    "dataSource": "db",
+    "dataSource": "mongo-db",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "db",
+    "dataSource": "mongo-db",
     "public": false
   },
   "Role": {
-    "dataSource": "db",
+    "dataSource": "mongo-db",
     "public": false
   },
   "Email": {
     "dataSource": "emailDs"
   },
   "user": {
-    "dataSource": "db",
+    "dataSource": "mongo-db",
     "public": true,
     "options": {
       "emailVerificationRequired": true

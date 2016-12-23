@@ -16,10 +16,15 @@
           "rejectUnauthorized": false
         },
         "auth": {
-          "user": "email@address.com",
-          "pass": "password"
+          "user": "pelotins2006@gmail.com",
+          "pass": "Pelotins2016"
         }
       }
     ]
+  },
+  "mongo-db": {
+    "url": "mongodb://heroku_0m73027p:r2ltba9bg34nv42hnvikk72q2m@ds141368.mlab.com:41368/heroku_0m73027p",
+    "name": "mongo-db",
+    "connector": "mongodb"
   }
 }
