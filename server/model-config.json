@@ -34,7 +34,7 @@
     "dataSource": "mongo-db",
     "public": true,
     "options": {
-      "emailVerificationRequired": true
+      "emailVerificationRequired": false
     }
   }
 }
