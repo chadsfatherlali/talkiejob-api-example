@@ -2,7 +2,15 @@
   "name": "user",
   "base": "User",
   "idInjection": true,
-  "properties": {},
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "surname": {
+      "type": "string"
+    }
+  },
+  "hidden": ["name"],
   "validations": [],
   "relations": {},
   "acls": [
