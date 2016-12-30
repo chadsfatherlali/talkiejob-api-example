@@ -7,8 +7,8 @@ var config = require('../../server/config.json');
 var path = require('path');
 
 module.exports = function(User) {
-  //send verification email after registration
-  User.afterRemote('create', function(context, user, next) {
+  //send verification email after registration  
+  /*User.afterRemote('create', function(context, user, next) {
     console.log('> user.afterRemote triggered');
 
     var options = {
@@ -37,7 +37,7 @@ module.exports = function(User) {
         redirectToLinkText: 'Log in'
       });
     });
-  });
+  });*/
 
   //send password reset link when requested
   User.on('resetPasswordRequest', function(info) {
