@@ -4,6 +4,7 @@
 // License text available at https://opensource.org/licenses/MIT
 
 var dsConfig = require('../datasources.json');
+var path = require('path');
 
 module.exports = function(app) {
   var User = app.models.user;
@@ -91,14 +92,33 @@ module.exports = function(app) {
 
     User.findById(req.accessToken.userId, function(err, user) {
       if (err) return res.sendStatus(404);
+
       user.updateAttribute('password', req.body.password, function(err, user) {
-      if (err) return res.sendStatus(404);
+        if (err) return res.sendStatus(404);
         
+        var options = {
+          type: 'email',
+          to: user.email,
+          from: 'noreply@loopback.com',
+          subject: 'Your password has been reset successfully.',
+          template: path.resolve(__dirname, '../../server/views/verify.ejs'),
+          redirectTo: '/'
+        };
+
+        user.verify(options, function(err, response) {
+          if (err) {
+            User.deleteById(user.id);
+            return next(err);
+          }
+
+          console.log('> verification is performed:', response);
+        });
+
         console.log('> password reset processed successfully');
         
         res.render('response', {
           title: 'Password reset success',
-          content: 'Your password has been reset successfully',
+          content: 'Your password has been reset successfully please confirm the email',
           redirectTo: '/',
           redirectToLinkText: 'Log in'
         });
