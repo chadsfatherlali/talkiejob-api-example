@@ -16,14 +16,14 @@
           "rejectUnauthorized": false
         },
         "auth": {
-          "user": "pelotins2006@gmail.com",
-          "pass": "Pelotins2016"
+          "user": "xxxxx@xxxx.xxx",
+          "pass": "xxxxxx"
         }
       }
     ]
   },
   "mongo-db": {
-    "url": "mongodb://heroku_0m73027p:r2ltba9bg34nv42hnvikk72q2m@ds141368.mlab.com:41368/heroku_0m73027p",
+    "url": "xxxxxxxxxxx",
     "name": "mongo-db",
     "connector": "mongodb"
   }
